@@ -1,0 +1,8 @@
+unique_values = data['whoAmI'].unique()
+
+one_hot_encoded = pd.DataFrame(0, columns=unique_values, index=data.index)
+
+for col in unique_values:
+    one_hot_encoded.loc[data['whoAmI'] == col, col] = 1
+
+one_hot_encoded.head()
